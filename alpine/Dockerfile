@@ -10,7 +10,7 @@ RUN apk add --no-cache --update -t deps openssl \
     && apk add --update bash \
     && cd /tmp \
     && wget --retry-connrefused -t 5 ${ALPINE_GLIBC_URL}${GLIBC_PKG} ${ALPINE_GLIBC_URL}${GLIBC_BIN_PKG} \
-    && wget --retry-connrefused -t 5 ${CONFD_URL}/v${CONFD_VERSION}/confd-linux-amd64 -O /bin/confd \
+    && wget --retry-connrefused -t 5 ${CONFD_URL}/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 -O /bin/confd \
     && apk add --allow-untrusted ${GLIBC_PKG} ${GLIBC_BIN_PKG} \
     && /usr/glibc/usr/bin/ldconfig /lib /usr/glibc/usr/lib \
     && chmod +x /bin/confd \

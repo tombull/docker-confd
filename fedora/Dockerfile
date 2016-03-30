@@ -6,6 +6,6 @@ ENV CONFD_VERSION="0.11.0" \
 RUN yum --setopt=tsflags=nodocs -y update  \
   && yum clean all \
   && yum --setopt=tsflags=nodocs -y install wget \
-  && wget --retry-connrefused -t 5 ${CONFD_URL}/v${CONFD_VERSION}/confd-linux-amd64 -O /bin/confd \
+  && wget --retry-connrefused -t 5 ${CONFD_URL}/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 -O /bin/confd \
   && chmod +x /bin/confd \
   && yum clean all
