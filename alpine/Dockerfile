@@ -7,7 +7,6 @@ ENV CONFD_VERSION="0.11.0" \
     GLIBC_BIN_PKG="glibc-bin-2.21-r2.apk"
 
 RUN apk add --no-cache --update -t deps openssl \
-    && apk add --update bash \
     && cd /tmp \
     && wget ${ALPINE_GLIBC_URL}${GLIBC_PKG} ${ALPINE_GLIBC_URL}${GLIBC_BIN_PKG} \
     && wget ${CONFD_URL}/v${CONFD_VERSION}/confd-${CONFD_VERSION}-linux-amd64 -O /bin/confd \
